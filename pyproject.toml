@@ -15,6 +15,9 @@ classifiers = [
 	"Programming Language :: Python :: 3.9",
 	"Programming Language :: Python :: 3.10",
 	"Programming Language :: Python :: 3.11",
+	"Programming Language :: Python :: 3.12",
+	"Programming Language :: Python :: 3.13",
+	"Programming Language :: Python :: 3.14",
 	"Programming Language :: Python :: Implementation :: CPython",
 ]
 dependencies = [
@@ -22,16 +25,16 @@ dependencies = [
 	"librosa>=0.8.0",
 	# TODO: mir_eval 0.8.1+ introduces fixes to sonification that broke our tests
 	# Likely we'd like to adapt the tests to release the constraint
-	"mir_eval>=0.6,<=0.8.0",
+	"mir_eval>=0.6,
 	"numpy>=1.18",
-	"onnxruntime; platform_system == 'Windows' and python_version < '3.11'",
+	"onnxruntime; platform_system == 'Windows' and python_version < '3.14'",
 	"pretty_midi>=0.2.9",
 	"resampy>=0.2.2,<0.4.3",
 	"scikit-learn",
 	"scipy>=1.4.1",
-	"tensorflow>=2.4.1,<2.15.1; platform_system != 'Darwin' and python_version >= '3.11'",
-	"tensorflow-macos>=2.4.1,<2.15.1; platform_system == 'Darwin' and python_version > '3.11'",
-	"tflite-runtime; platform_system == 'Linux' and python_version < '3.11'",
+	"tensorflow>=2.4.1; platform_system != 'Darwin' and python_version >= '3.14'",
+	"tensorflow-macos>=2.4.1; platform_system == 'Darwin' and python_version > '3.14'",
+	"tflite-runtime; platform_system == 'Linux' and python_version < '3.14'",
 	"typing_extensions",
 ]
 
@@ -59,7 +62,7 @@ data = [
     "apache_beam",
 	# TODO: mirdata 0.3.9 moves dataset indexes files which breaks our tests
 	# Adapt our codebase to release that constraint 
-    "mirdata<=0.3.8",
+    "mirdata>=0.3.8",
     "smart_open",
     "sox",
     "ffmpeg-python"
@@ -72,8 +75,8 @@ test = [
 	"mido"
 ]
 tf = [
-	"tensorflow>=2.4.1,<2.15.1; platform_system != 'Darwin'",
-	"tensorflow-macos>=2.4.1,<2.15.1; platform_system == 'Darwin' and python_version > '3.7'",
+	"tensorflow>=2.4.1; platform_system != 'Darwin'",
+	"tensorflow-macos>=2.4.1; platform_system == 'Darwin' and python_version > '3.7'",
 ]
 coreml = ["coremltools"] 
 onnx = ["onnxruntime"]
